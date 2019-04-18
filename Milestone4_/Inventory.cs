@@ -1,4 +1,8 @@
-﻿using System;
+﻿//Henry Harvey
+//This is my own work
+//CST-117 Lydia Frtiz
+//4-18-19
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
