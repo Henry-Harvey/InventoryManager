@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.tabControl = new System.Windows.Forms.TabControl();
             this.viewTab = new System.Windows.Forms.TabPage();
             this.btn_updateGrid = new System.Windows.Forms.Button();
@@ -490,8 +491,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(752, 467);
             this.Controls.Add(this.tabControl);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Candy Inventory";
             this.tabControl.ResumeLayout(false);
             this.viewTab.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);

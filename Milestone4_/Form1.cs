@@ -100,13 +100,17 @@ namespace Milestone4_
         // Add Product
         private void btn_addProduct_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(textBox_newName.Text) || string.IsNullOrEmpty(textBox_newBrand.Text) || string.IsNullOrEmpty(textBox_newStock.Text) || string.IsNullOrEmpty(textBox_newPrice.Text) || string.IsNullOrEmpty(richTextBox_newDescription.Text))
+            int num = -1;
+            double num2 = -1;
+            bool stockIsNumeric = int.TryParse(textBox_newStock.Text, out num);
+            bool priceIsNumeric = double.TryParse(textBox_newPrice.Text, out num2);
+            if (string.IsNullOrEmpty(textBox_newName.Text) || string.IsNullOrEmpty(textBox_newBrand.Text) || string.IsNullOrEmpty(textBox_newStock.Text) || string.IsNullOrEmpty(textBox_newPrice.Text) || string.IsNullOrEmpty(richTextBox_newDescription.Text) || stockIsNumeric == false || priceIsNumeric == false)
             {
-                MessageBox.Show("Please Fill In All Fields");
+                MessageBox.Show("Please Fill In All Fields. Stock and Price must be numeric");
             }
             else
             {
-                int newID = inventory.getInventorySize() + 1;
+                int newID = inventory.getItem(inventory.getInventorySize() - 1).ID + 1;
                 Product p = new Product(newID, textBox_newName.Text, textBox_newBrand.Text, int.Parse(textBox_newStock.Text), double.Parse(textBox_newPrice.Text), richTextBox_newDescription.Text);
                 inventory.addItem(p);
 
